@@ -22,3 +22,19 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+
+def getCalendar(input):
+    try:
+        month, year = 9, 2019
+        if len(input) == 2:
+            month = int(input[1])
+        elif len(input) == 3:
+            month, year = int(input[1]), int(input[2][1:5])
+
+        calendar.TextCalendar().prmonth(year, month)
+    except:
+        print("Please provide a valid month and year when launching the program.")
+
+
+getCalendar(sys.argv)
