@@ -25,16 +25,16 @@ from datetime import datetime
 
 
 def getCalendar(input):
+    month, year = datetime.today().month, datetime.today().year
     try:
-        month, year = 9, 2019
-        if len(input) == 2:
+        if len(input) >= 2:
             month = int(input[1])
-        elif len(input) == 3:
-            month, year = int(input[1]), int(input[2][1:5])
+        if len(input) >= 3:
+            year = int(input[2])
 
         calendar.TextCalendar().prmonth(year, month)
     except:
-        print("Please provide a valid month and year when launching the program.")
+        print("Please provide a valid integer-represented month and year when launching the program.")
 
 
 getCalendar(sys.argv)
