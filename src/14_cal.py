@@ -22,3 +22,19 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+
+def getCalendar(input):
+    month, year = datetime.today().month, datetime.today().year
+    try:
+        if len(input) >= 2:
+            month = int(input[1])
+        if len(input) >= 3:
+            year = int(input[2])
+
+        calendar.TextCalendar().prmonth(year, month)
+    except:
+        print("Please provide a valid integer-represented month and year when launching the program.")
+
+
+getCalendar(sys.argv)
